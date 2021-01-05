@@ -1,0 +1,4481 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+/*Global Styles*/
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --main-font: 'Julius Sans One', sans-serif;
+    --secondary-font: 'Permanent Marker', cursive;
+    --body-font: 'Cabin', sans-serif;
+    --main-font-color-dark: #252525;
+    --secondary-font-color: #EB1C24;
+    --body-font-color: #252525;
+    --third-font: 'Secular One', sans-serif;
+    --third-font-color: #F3F4F6;
+    /*#515151;*/
+}
+
+html {
+    font-family: var(--body-font);
+    font-size: 10px;
+    color: var(--body-font-color);
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+
+}
+
+section {
+    padding: 3.9rem 0;
+    overflow: hidden;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+
+}
+
+a {
+    text-decoration: none;
+
+}
+
+p {
+    font-size: 1.6rem;
+    font-family: var(--main-font);
+    /*var(--secondary-font);*/
+    font-weight: 600;
+}
+
+ul {
+    list-style: none;
+}
+
+
+
+.nav-item-1 {
+    padding-top: .8rem;
+}
+
+.contact-item {
+    font-size: 1.1rem;
+    background-color: var(--secondary-font-color);
+    padding: .3rem 1.8rem;
+    padding-top: 0.6rem;
+    border-radius: .4rem;
+    transition: background-color .5s;
+}
+
+.contact-item a {
+    opacity: 2;
+    font-weight: 750;
+    color: #fff;
+    font-family: var(--body-font);
+}
+
+
+.contact-item a:hover {
+    color: #252525;
+    transition: ease-in-out 0.45s;
+    opacity: 0.75;
+}
+
+.container {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+
+}
+
+.container-1 {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+.container-2 {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+}
+
+
+/*MODAL----------------------*/
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 100;
+    background-color: white;
+    width: 760px;
+    max-width: 80%;
+    background-image: url(./images/Announcement-4.jpg);
+    font-family: var(--secondary-font);
+
+}
+
+.modal-body h2 {
+    margin-bottom: 3rem;
+    color: #252525;
+}
+
+.modal-body h3 {
+    color: #252525;
+    padding-bottom: 15px;
+}
+
+.modal-body h4 {
+    color: var(--secondary-font-color);
+    padding-bottom: 10px;
+    font-weight: 900;
+}
+
+.modal-body span {
+    text-decoration: underline;
+}
+
+.modal-body .tel-number {
+    margin-top: 15px;
+}
+
+.modal-body .order-now {
+    margin-top: -3px;
+
+}
+
+.modal-body .order-now a {
+    text-decoration: none;
+    color: var(--secondary-font-color);
+
+}
+
+.modal-body .order-now a:hover {
+    color: var(--body-font-color);
+    text-decoration: underline;
+    transition: ease-in 0.2s;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--body-font-color);
+
+}
+
+.modal-header .title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #EB1C24;
+
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button:hover {
+    color: #EB1C24;
+    transition: 0.5s ease-out;
+}
+
+.modal-body {
+    padding: 10px 25px;
+    font-size: 2rem;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/*Modal Ends*/
+
+/*Top Logo*/
+.logo {
+    padding-top: 0.7rem;
+}
+
+/*Main Logo*/
+.main-logo {
+    width: 10rem;
+    margin-bottom: -1rem;
+    margin-right: -2px;
+
+
+}
+
+.side-logo {
+    width: 2rem;
+}
+
+/*header*/
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.nav {
+    height: 7.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle {
+    color: #000;
+    font-size: 2.2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2.5rem;
+    cursor: pointer;
+    z-index: 1500;
+}
+
+.menu-toggle-1 {
+    color: #fff;
+}
+
+.menu-toggle:hover {
+    color: #fff;
+    transition: ease-in 0.3s;
+}
+
+.menu-toggle-1:hover {
+    color: #fff;
+    transition: ease-in 0.3s;
+}
+
+.fa-times {
+    display: none;
+}
+
+.nav-list {
+    list-style: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: var(--main-font-color-dark);
+    padding: 4.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 1250;
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+}
+
+
+.nav::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.5s;
+
+
+
+
+}
+
+.open .fa-times {
+    display: block;
+}
+
+.open .fa-bars {
+    display: none;
+}
+
+.open .nav-list {
+    transform: translateX(0);
+
+}
+
+.open .nav::before {
+    opacity: 1;
+    transform: scale(1);
+
+}
+
+.nav-item {
+    border-bottom: 2px solid var(--third-font-color);
+    /*rgba(255, 255, 255, 0.3);*/
+
+}
+
+.nav-item-online {
+    border-bottom: 2px solid var(--secondary-font-color);
+}
+
+.nav-link {
+    display: block;
+    font-family: var(--third-font);
+    color: var(--body-font-color);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin-right: -2px;
+    transition: color 0.5s;
+}
+
+.nav-link-1 {
+    display: block;
+    font-family: var(--main-font);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    margin-right: -2px;
+    transition: color 0.5s;
+    font-weight: 550;
+}
+
+.nav-link:hover {
+    color: var(--third-font-color);
+}
+
+.nav-link-1:hover {
+    color: #7a7a7a;
+}
+
+.container .logo-imari {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 2.5rem;
+    letter-spacing: 5.5px;
+    /*border-bottom: 2.2px solid #fff;*/
+    font-weight: 650;
+    text-transform: uppercase;
+}
+
+.container .logo-imari-white {
+    color: #F2F3F5;
+}
+
+.logo-imari-1 {
+    color: #F2F3F5;
+    font-size: 3rem;
+    letter-spacing: 10px;
+    /*border-bottom: 2.2px solid #fff;*/
+    font-weight: 950;
+    margin-left: 7px;
+    text-transform: uppercase;
+}
+
+.logo-imari-2 {
+    color: #000;
+}
+
+.container .logo-imari:hover {
+    color: #F2F3F5;
+    /*border-bottom: 2.2px solid var(--main-font-color-dark);*/
+    transition: ease-in 0.3s;
+}
+
+.container .logo-imari-white:hover {
+    color: #7a7a7a;
+    /*border-bottom: 2.2px solid var(--main-font-color-dark);*/
+    transition: ease-in 0.3s;
+}
+
+/*Hero*/
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url(./images/images-from-web/6.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 9.5rem;
+
+}
+
+.sub-headline {
+    font-size: 8.5rem;
+    font-family: var(--secondary-font);
+    color: #000;
+    /*var(--secondary-font-color);*/
+    font-weight: 200;
+    line-height: 0.4;
+    letter-spacing: 5px;
+    opacity: 0;
+    animation: fadeUp .5s forwards;
+    animation-delay: .5s;
+    padding-bottom: 10px;
+    /*changed*/
+
+}
+
+.sub-headline-1 {
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: -0.3px 0.3px 0 #000,
+        0.5px 0.5px 0 #000,
+        0.3px -0.3px 0 #000,
+        -0.3px -0.3px 0 #000;
+}
+
+.sub-headline-2 {
+    text-shadow: none;
+    color: #000;
+}
+
+.sub-headline-3 {
+    color: var(--third-font-color);
+}
+
+
+.first-letter {
+    text-transform: uppercase;
+    font-size: 10.3rem;
+    font-weight: 100;
+
+}
+
+.headline {
+    color: #fff;
+    text-shadow: -0.3px 0.3px 0 #000,
+        0.5px 0.5px 0 #000,
+        0.3px -0.3px 0 #000,
+        -0.3px -0.3px 0 #000;
+    font-size: 3.7rem;
+    font-family: var(--secondary-font);
+    /*var(--main-font);*/
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5rem;
+    margin-right: -0.5rem;
+    animation: scale .5s forwards;
+}
+
+.headline-1 {
+    text-shadow: none;
+}
+
+
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+
+}
+
+.line {
+    width: 100%;
+    max-width: 8.4rem;
+    height: .25rem;
+    background-color: #fff;
+    position: relative;
+    opacity: 0;
+    animation: grow 2s forwards;
+    animation-delay: .9s;
+}
+
+.line-right::before,
+.line-left::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: .6rem solid transparent;
+    opacity: 0;
+    animation: grow .5s forwards;
+    animation-delay: 1.2s;
+
+}
+
+.line-right::before {
+    border-right-color: #fff;
+    right: 0;
+}
+
+.line-left::before {
+    border-left-color: #fff;
+    left: 0;
+}
+
+.asterisk {
+    font-size: 1.2rem;
+    color: var(--secondary-font-color);
+    margin: 0 1.6rem;
+    opacity: 0;
+    animation: spin .5s forwards;
+    animation-delay: .7s;
+}
+
+
+.single-animation {
+    opacity: 0;
+    animation: fadeDown .5s forwards;
+    animation-delay: 1.5s;
+
+}
+
+
+.headline-description h5 {
+    color: #000;
+    font-family: var(--main-font);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    letter-spacing: 10px;
+    margin-right: -10px;
+    text-shadow: -0.1px 0.1px 0 #000,
+        0.5px 0.5px 0 #000,
+        0.1px -0.1px 0 #000,
+        -0.1px -0.1px 0 #000;
+    opacity: 0.9;
+}
+
+.headline-description .h5-1 {
+    opacity: 1;
+}
+
+
+.headline-description h5 {
+    color: var(--body-font-color);
+}
+
+.headline-description-menu h5 {
+    color: #fff;
+}
+
+
+.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: -2px;
+
+}
+
+.btn-2 {
+
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    margin-right: -2px;
+
+}
+
+.cta-btn {
+    font-size: 2rem;
+    color: #fff;
+    padding: 1.3rem 1.8rem;
+    background-color: var(--secondary-font-color);
+    border-radius: .5rem;
+    transition: background-color .5s;
+    font-weight: 800;
+    margin-top: 2rem;
+    font-family: var(--main-font);
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+    background-color: #fff;
+    color: var(--main-font-color);
+    transition: ease-in 0.4s;
+}
+
+/*Top Social Icons*/
+
+.social-icons-1 {
+    list-style: none;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.social-icons-1 i {
+    font-size: 5rem;
+    color: #252525;
+    padding: 1.5rem 4rem;
+    opacity: .5;
+    transition: color .5s;
+    margin: 1rem;
+    margin-top: 4rem;
+    margin-left: -1rem;
+}
+
+.social-icons-3 i {
+    color: #000;
+}
+
+.social-icons-4 i {
+    color: var(--third-font-color);
+}
+
+/*Image Slider*/
+
+#main-slider {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.slider {
+    width: 640px;
+    /*height: 506px;*/
+    /*border-radius: 10px;*/
+    overflow: hidden;
+    box-shadow: 0px 61px 0px 0px rgba(0, 0.62, 0, 0);
+}
+
+.slides {
+    width: 500%;
+    /*height: 506px;*/
+    display: flex;
+}
+
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 760px;
+    /*height: 506px;*/
+}
+
+
+/*Image Slider-About-----*/
+
+.slider-1 {
+    width: 600px;
+    /*height: 506px;*/
+    /*border-radius: 10px;*/
+    overflow: hidden;
+    box-shadow: 0px 61px 0px 0px rgba(0, 0.62, 0, 0);
+}
+
+.slides-1 {
+    width: 500%;
+    /*height: 506px;*/
+    display: flex;
+}
+
+
+
+/*css for manual slide navigation*/
+
+.navigation-manual {
+    position: absolute;
+    width: 640px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.manual-btn {
+    border: 2.55px solid var(--body-font-color);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background: var(--main-font-color-dark);
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -20%;
+}
+
+#radio3:checked~.first {
+    margin-left: -40%;
+}
+
+#radio4:checked~.first {
+    margin-left: -60%;
+}
+
+#radio5:checked~.first {
+    margin-left: -80%;
+}
+
+
+/*css for automatic navigation*/
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 640px;
+    justify-content: center;
+    margin-top: 388.62px;
+}
+
+.navigation-auto-1 {
+    position: absolute;
+    display: flex;
+    width: 640px;
+    justify-content: center;
+    margin-top: 422.62px;
+}
+
+.navigation-auto div {
+    border: 2.55px solid var(--main-font-color-dark);
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+
+#radio1:checked~.navigation-auto .auto-btn-1 {
+    background: var(--third-font-color);
+    opacity: 0.9;
+}
+
+#radio2:checked~.navigation-auto .auto-btn-2 {
+    background: var(--third-font-color);
+    opacity: 0.9;
+}
+
+#radio3:checked~.navigation-auto .auto-btn-3 {
+    background: var(--third-font-color);
+    opacity: 0.9;
+}
+
+#radio4:checked~.navigation-auto .auto-btn-4 {
+    background: var(--third-font-color);
+    opacity: 0.9;
+}
+
+#radio5:checked~.navigation-auto .auto-btn-5 {
+    background: var(--third-font-color);
+    opacity: 0.9;
+}
+
+/*Image Slider Ends*/
+
+
+
+
+/*ARROWS---------------------
+.arrow {
+    background-color: transparent;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    font-size: 5rem;
+    color: black;
+    opacity: 1;
+    cursor: pointer;
+    border-radius: 7px;
+    animation: fadeUp 1s forwards;
+}
+
+.arrow:hover,
+.arrow:focus{
+    color: #fff;
+    transition: ease-in 0.4s;
+    background-color: var(--body-font-color);
+}
+
+.left-arrow {
+    margin: 0 2rem;
+}
+
+.right-arrow {
+    margin: 0 2rem;
+}
+
+ARRROWS END--------------------*/
+
+/*Top Social Icons Hover*/
+.social-icons-1 .fa-instagram:hover,
+.social-icons-1 .fa-instagram:focus {
+    color: #515bd4;
+    transition: ease-in 0.3s;
+}
+
+.social-icons-1 .fa-facebook:hover,
+.social-icons-1 .fa-facebook:focus {
+    color: #0268E3;
+    transition: ease-in 0.3s;
+}
+
+.social-icons-1 .fa-facebook-square:hover,
+.social-icons-1 .fa-facebook-square:focus {
+    color: #0268E3;
+    transition: ease-in 0.3s;
+}
+
+.social-icons-1 .fa-yelp:hover,
+.social-icons-1 .fa-yelp:focus {
+    color: var(--secondary-font-color);
+    transition: ease-in 0.3s;
+}
+
+.social-icons-1 .fa-google:hover,
+.social-icons-1 .fa-google:focus {
+    color: #4885ed;
+    transition: ease-in 0.3s;
+}
+
+/*Top Social Icons Hover End*/
+
+
+/*Top Social Icons [Contact]*/
+.social-icons-2 .fa-instagram {
+    color: #515bd4;
+    transition: ease-in 0.3s;
+}
+
+.social-icons-2 .fa-facebook {
+    color: #0268E3;
+    transition: ease-in 0.3s;
+}
+
+.social-icons-2 .fa-facebook-square {
+    color: #0268E3;
+    transition: ease-in 0.3s;
+}
+
+.social-icons-2 .fa-yelp {
+    color: var(--secondary-font-color);
+    transition: ease-in 0.3s;
+}
+
+.social-icons-2 .fa-google {
+    color: #4885ed;
+    transition: ease-in 0.3s;
+}
+
+.social-icons-2 .fa-instagram:hover,
+.social-icons-2 .fa-instagram:focus,
+.social-icons-2 .fa-facebook:hover,
+.social-icons-2 .fa-facebook:focus,
+.social-icons-2 .fa-yelp:hover,
+.social-icons-2 .fa-yelp:focus,
+.social-icons-2 .fa-google:hover,
+.social-icons-2 .fa-google:focus {
+    color: #d2d2d2;
+    transition: ease-in 0.3s;
+}
+
+
+
+.social-icons-1 i {
+    opacity: 1;
+}
+
+/*Top Social Icons-[Contact] End*/
+
+
+/*Top Social Icons [About]*/
+
+
+
+
+/*Scroll Down Arrow*/
+.back-to-bottom i {
+    display: block;
+    color: #252525;
+    font-size: 3rem;
+    padding: 2rem;
+    animation: down 2.3s infinite;
+    margin-bottom: -10rem;
+
+}
+
+.back-to-bottom-1 i {
+    display: block;
+    color: #d2d2d2;
+    font-size: 3rem;
+    padding: 2rem;
+    animation: down 2.3s infinite;
+    margin-bottom: -10rem;
+}
+
+/*Scroll Down Arrow Ends*/
+
+
+/*Discover Our Story*/
+.discover-our-story {
+    background: url(./images/background-1.7.jpg) center no-repeat;
+    background-size: cover;
+}
+
+/*Discover-our-story-About*/
+.discover-our-story-1 {
+    background: url(./images/background-7-1.jpg) center no-repeat;
+    background-size: cover;
+}
+
+/* Discover Our Story Menu*/
+.discover-our-story-menu {
+    background: none;
+    padding-bottom: none;
+}
+
+/* Discover Our Story Drink Menu*/
+
+.discover-our-story-drink-menu-beer {
+    margin: 0;
+    padding: 0;
+}
+
+.discover-our-story-drink-menu,
+.discover-our-story-drink-menu-beer,
+.discover-our-story-drink-menu-wine,
+.discover-our-story-drink-menu-soft,
+.discover-our-story-dessert {
+    background: none;
+    padding-bottom: none;
+}
+
+/* Discover Our Story Drink Menu End*/
+
+
+
+/*.chef-hector {
+    left: 20rem;
+}
+
+
+.chef-hector-description {
+    padding-left: 15rem;
+    padding-right: 15rem;
+}*/
+
+
+/*.discover-our-story-About-End*/
+
+.global-headline {
+    text-align: center;
+    margin-top: 3.9rem;
+}
+
+.discover-our-story .global-headline {
+    margin-top: 6.9rem;
+}
+
+.global-headline .asterisk {
+    color: var(--body-font-color);
+    margin: 2.4rem 0;
+}
+
+.headline-dark {
+    color: var(--main-font-color-dark);
+    letter-spacing: .7rem;
+    margin-right: -.7rem;
+}
+
+.headline-dark-1 {
+    /*color: var(--third-font-color);*/
+    text-shadow: -0.3px 0.3px 0 #000,
+        0.5px 0.5px 0 #000,
+        0.3px -0.3px 0 #000,
+        -0.3px -0.3px 0 #000;
+    /*letter-spacing: .7rem;
+    margin-right: -.7rem;*/
+}
+
+.headline-dark-3 {
+    color: #000;
+    text-shadow: none;
+}
+
+.headline-dark-2 {
+    margin-top: 1rem;
+}
+
+
+
+.global-headline .sub-headline {
+    letter-spacing: -1px;
+    line-height: .42;
+
+}
+
+.restaurant-info {
+    text-align: center;
+
+}
+
+
+.restaurant-description {
+    margin-bottom: 3rem;
+}
+
+.restaurant-description h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: var(--main-font);
+}
+
+.restaurant-description h4 {
+    font-size: 1.75rem;
+    font-family: var(--main-font);
+    color: var(--secondary-font-color);
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+.restaurant-description p {
+    line-height: 1.6;
+    margin-bottom: 2.4rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--body-font-color);
+    opacity: 0.95;
+}
+
+.body-btn {
+    font-size: 2rem;
+    color: var(--secondary-font-color);
+    position: relative;
+    transition: color .5s;
+    font-family: var(--main-font);
+    font-weight: 900;
+}
+
+.body-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4.2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-font-color);
+    transition: background-color .5s;
+}
+
+.body-btn:hover,
+.body-btn:focus {
+    color: var(--main-font-color-dark);
+
+}
+
+.body-btn:hover::before,
+.body-btn:focus::before {
+    background-color: var(--main-font-color-dark);
+}
+
+/*Dining and Tasteful Recipes*/
+.tasteful-recipes {
+    background: url(./images/images-from-web/11.jpg) center no-repeat;
+    background-size: cover;
+}
+
+
+.tasteful-recipes-1 {
+    background: url(./images/about-pic/Chirashi-2.jpg) center no-repeat;
+    background-size: cover;
+}
+
+
+.kitchen-recipes {
+    background: url(./images/about-pic/salkama.jpg) center no-repeat;
+    background-size: cover;
+    /*opacity: 0.85;*/
+}
+
+.between {
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+}
+
+.between-kitchen {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+
+.dining,
+.tasteful {
+    display: inline-block;
+}
+
+
+/*Discover Our Menu*/
+.image-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5rem;
+    position: relative;
+}
+
+
+.delight-pic {
+    opacity: 20;
+}
+
+
+.image-group img {
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+/*About Image*/
+.image-group-1 {
+    position: relative;
+}
+
+.image-group-1 img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    margin-top: 0rem;
+    padding: 0;
+    bottom: 0%;
+
+}
+
+/*About Image End*/
+
+
+
+.body-btn-1 {
+    font-size: 1.9rem;
+    /*background-color: #AEC3C6*/
+    color: #fff;
+    font-family: var(--main-font);
+    position: relative;
+    transition: color .5s;
+    padding: 3rem;
+    border: 2.5px solid #000;
+    top: 7rem;
+    font-weight: 900;
+    transition: ease-in-out 0.4s;
+    background-color: #000;
+}
+
+/*.body-btn-1::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-font-color);
+    transition: background-color .5s;
+
+}*/
+
+.body-btn-1:hover,
+.body-btn-1:focus {
+    color: #000;
+    border: 2.5px solid var(--body-font-color);
+    background-color: transparent;
+}
+
+/*.body-btn-1:hover::before,
+.body-btn-1:focus::before {
+    background-color: var(--main-font-color-dark);
+}*/
+
+
+/*Discover Menu*/
+.discover-our-menu {
+    background: url(./images/background-3.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.discover-our-menu-1 {
+    /*background: url(./images/background-1.jpg) center no-repeat;*/
+    background-size: cover;
+}
+
+.discover-our-menu-2 {
+    background: none;
+}
+
+.discover-our-menu-3 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.discover-our-menu .restaurant-description {
+    padding-top: 3rem;
+    margin-bottom: 0;
+}
+
+/*Culinary Delight*/
+.culinary-delight {
+    background: url(./images/background-4.jpg) center no-repeat;
+    background-size: cover;
+}
+
+#all-chefs {
+    background: url(./images/background-7-1.jpg) center no-repeat;
+    background-size: cover;
+}
+
+#all-chefs-kitchen {
+    background: url(./images/background-7-2.jpg) center no-repeat;
+    background-size: cover;
+}
+
+
+
+/*The Perfect blend*/
+.perfect-blend {
+    background: url(./images/images-from-web/16-3.JPG) center no-repeat;
+    background-size: cover;
+}
+
+.drink-menu {
+    margin-top: 2rem;
+}
+
+/*About-Chef-Images----------------*/
+.chef-judy {
+    opacity: 0.96;
+
+}
+
+.chef-oscar {
+    height: 700px;
+}
+
+.chef-hector {
+    opacity: 0.89;
+
+}
+
+.chef-jose {
+    opacity: 2;
+}
+
+/*Footer*/
+footer {
+    padding: 7.9rem 0;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.back-to-top {
+    width: 6rem;
+    height: 7rem;
+    background-color: #121212;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+.back-to-top i {
+    display: block;
+    color: #fff;
+    font-size: 2rem;
+    padding: 2rem;
+    animation: up 2s infinite;
+}
+
+.footer-content {
+    overflow: hidden;
+}
+
+.footer-content h4 {
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+}
+
+
+.footer-content .asterisk {
+    margin: 2.4rem 0;
+}
+
+.footer-content-about {
+    margin-bottom: 5.4rem;
+}
+
+.footer-content-about p {
+    line-height: 2;
+}
+
+.social-icons {
+    list-style: none;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.social-icons i {
+    font-size: 3rem;
+    color: #fff;
+    padding: .8rem 3rem;
+    opacity: .5;
+    transition: color .5s;
+}
+
+
+
+.social-icons i:hover,
+.social-icons i:focus {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /*color: var(--secondary-font-color);
+    transition: ease-in 0.4s;*/
+
+}
+
+/*Top Social Icons Hover*/
+.social-icons .fa-instagram:hover,
+.social-icons .fa-instagram:focus {
+    color: #515bd4;
+    transition: ease-in 0.3s;
+}
+
+.social-icons .fa-facebook:hover,
+.social-icons .fa-facebook:focus {
+    color: #0268E3;
+    transition: ease-in 0.3s;
+}
+
+.social-icons .fa-facebook-square:hover,
+.social-icons .fa-facebook-square:focus {
+    color: #0268E3;
+    transition: ease-in 0.3s;
+}
+
+.social-icons .fa-yelp:hover,
+.social-icons .fa-yelp:focus {
+    color: var(--secondary-font-color);
+    transition: ease-in 0.3s;
+}
+
+.social-icons .fa-google:hover,
+.social-icons .fa-google:focus {
+    color: #4885ed;
+    transition: ease-in 0.3s;
+}
+
+/*Top Social Icons Hover End*/
+
+
+.footer-address {
+    color: var(--secondary-font-color);
+    margin-top: 1.3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.footer-address a {
+    text-decoration: none;
+    color: var(--secondary-font-color);
+
+}
+
+.footer-address a:hover,
+.footer-address a:focus {
+    color: #fff;
+    transition: ease-in 0.3s;
+}
+
+
+
+.footer-list {
+    list-style: none;
+    margin-top: 3rem;
+    padding-top: 3rem;
+}
+
+.footer-address-1 {
+    font-weight: 100;
+    opacity: 0.3;
+    margin-top: 3rem;
+}
+
+/*About Section-----------------------------*/
+
+.hero-1-about {
+    width: 100%;
+    height: 100vh;
+    background: url(./images/images-from-web/49.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 9.5rem;
+}
+
+/*Menu Section------------------------------*/
+
+.hero-1-menu {
+    width: 100%;
+    height: 100vh;
+    background: url(./images/images-from-web/menu-main.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 9.5rem;
+}
+
+/*Drink Menu Section------------------------*/
+
+.hero-1-drink-menu {
+    width: 100%;
+    height: 100vh;
+    background: url(./images/images-from-web/drink-main.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 9.5rem;
+}
+
+
+
+/*Contact Section--------------------------*/
+
+.hero-1 {
+    width: 100%;
+    height: 100vh;
+    background: url(./images/images-from-web/41.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 9.5rem;
+
+}
+
+
+.hero-2 {
+    background: url(./images/contact-images/contact-section-10.jpg) center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+/*Sushi Imari Menu--------------*/
+/*Isakaya & Sushi-Sashimi ID flex*/
+#isakaya-sushi-sashimi {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: -2%;
+    padding: 0;
+
+}
+
+
+/*Kitchen-Combo & Dinner-Combo ID flex*/
+#kitchen-dinner-combo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+/*Bowls & Udon ID flex*/
+#bowls-udon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+}
+
+/*Menu Group - 1 ID flex*/
+#menu-group-1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+
+}
+
+/*Isakaya Section*/
+
+.container-isakaya {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+
+
+}
+
+.container-isakaya .isakaya {
+    padding-bottom: 2rem;
+
+}
+
+.container-isakaya h1 {
+    margin: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+}
+
+.menu-isakaya ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu-isakaya ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+}
+
+.menu-isakaya ul h5 {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    opacity: 1;
+    margin: 1.3rem;
+}
+
+.menu-isakaya ul h3 {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menu-isakaya ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    font-weight: 600;
+    opacity: 1;
+    margin-bottom: 1.5rem;
+}
+
+.menu-isakaya li,
+.menu-isakaya h5,
+.menu-isakaya p {
+    margin: 1.5px;
+}
+
+.menu-isakaya-1,
+.menu-isakaya-2 {
+    width: 400px;
+    margin: 3.5rem;
+}
+
+/*Basic Maki & Combination Sushi Bar-----*/
+#basic-maki-combination {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    /*margin-left: 3%;*/
+}
+
+/*Basic Maki & Combination Sushi Bar End-----*/
+
+/*Salad Section */
+#salad-basic-maki {
+    padding: 0;
+}
+
+.container-salad {
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+.container-salad h1 {
+    margin: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+
+}
+
+.salad {
+    padding-bottom: 2rem;
+}
+
+.menu-salad ul {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.menu-salad ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menu-salad ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    opacity: 1;
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+
+.menu-salad ul li h5 p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    opacity: 1;
+    margin: 0.5rem;
+}
+
+.menu-salad li,
+.menu-salad h5,
+.menu-salad p {
+    margin: 1.5px;
+}
+
+
+/*Sushi-Sashimi-Section*/
+.discover-our-story-sushi-sashimi {
+    padding-bottom: 0;
+
+}
+
+.discover-our-story-sushi-sashimi {
+    font-size: 1.35rem;
+    font-family: var(--body-font);
+    text-transform: uppercase;
+    color: var(--secondary-font-color);
+    z-index: 1000;
+}
+
+.discover-our-story-sushi-sashimi h1 {
+    margin: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+.discover-our-story-sushi-sashimi h3 {
+    margin: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.discover-our-story-sushi-sashimi h3 span {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.container-sushi-sashimi {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+.menu-sushi-sashimi ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.menu-sushi-sashimi ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 15px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    opacity: 1;
+}
+
+.menu-sushi-sashimi ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 13px;
+    letter-spacing: 2px;
+    opacity: 1;
+}
+
+.menu-sushi-sashimi ul h4 {
+    font-size: 1.25rem;
+    font-weight: 1000;
+    color: var(--secondary-font-color);
+}
+
+.menu-sushi-sashimi li,
+.menu-sushi-sashimi h5,
+.menu-sushi-sashimi p {
+    margin: 1.3rem;
+}
+
+.sushi-sashimi-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: center;
+    flex-wrap: wrap;
+}
+
+/*Basic-Maki-Section*/
+.discover-our-menu-maki {
+    padding: 0;
+}
+
+.container-basic-maki {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+.container-basic-maki h1 {
+    margin: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+
+.menu-basic-maki ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.menu-basic-maki ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: 1.7px;
+    opacity: 1;
+    margin: 1rem;
+}
+
+.menu-basic-maki ul p {
+    color: var(--body-font-color);
+    font-family: var(--third-font);
+    font-size: 15px;
+    /*letter-spacing: 2px;*/
+    opacity: 1;
+    font-weight: 1000;
+}
+
+.menu-basic-maki ul span {
+    color: var(--body-font-color);
+    font-family: var(--third-font);
+    font-size: 15px;
+    opacity: 1;
+    font-weight: 1000;
+}
+
+.menu-basic-maki li,
+.menu-basic-maki h5,
+.menu-basic-maki p {
+    margin: 2px;
+}
+
+.basic-maki-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: center;
+}
+
+
+/*Special-Roll-Section*/
+
+.discover-our-story-special-rolls {
+    padding: 0;
+}
+
+.discover-our-story-special-rolls h4 {
+    margin: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    color: var(--secondary-font-color);
+}
+
+.discover-our-story-special-rolls h4 span {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.container-special-roll {
+    width: 100%;
+    max-width: 150rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+.container-special-roll h1 {
+    margin: 3rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+
+}
+
+.special-roll-list {
+    left: 20%;
+}
+.special-roll-list-1,
+.special-roll-list-2,
+.special-roll-list-3 {
+    width: 450px;
+}
+
+
+.menu-special-roll ul li {
+    color: #fff;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+}
+
+
+
+.menu-special-roll ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: 1.7px;
+    opacity: 1;
+    margin: 1rem;
+}
+
+.menu-special-roll ul h3 {
+    font-size: 1.3rem;
+    color: var(--secondary-font-color);
+    font-weight: 1000;
+}
+
+
+.menu-special-roll ul span {
+    color: var(--body-font-color);
+    font-family: var(--third-font);
+    font-size: 15px;
+    opacity: 1;
+    font-weight: 1000;
+}
+
+.menu-special-roll ul .panel span {
+    color: #fff;
+}
+
+.menu-special-roll ul span i {
+    color: #fff;
+}
+
+.menu-special-roll ul p {
+    color: var(--body-font-color);
+    font-family: var(--third-font);
+    font-size: 15px;
+    opacity: 1;
+    font-weight: 1000;
+}
+
+.menu-special-roll li,
+.menu-special-roll h5,
+.menu-special-roll p {
+    margin: 2px;
+}
+
+.menu-special-roll li {
+    margin-bottom: 10px;
+}
+
+.special-roll-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: center;
+
+}
+
+.panel,
+.panel-1 {
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 25px;
+    cursor: pointer;
+    height: 20px;
+    align-self: 0.5;
+    /*height: 200px;*/
+    position: relative;
+    transition: 0.6s ease-in;
+    text-shadow: -0.3px 0.3px 0 #000,
+        0.5px 0.5px 0 #000,
+        0.3px -0.3px 0 #000,
+        -0.3px -0.3px 0 #000;
+}
+
+.panel-1-stretch {
+    height: 30px;
+}
+
+.panel.active-1 {
+    height: 200px;
+}
+
+.panel-1.active-2 {
+    height: 200px;
+}
+
+.panel-1-stretch.active-2 {
+    height: 375px;
+}
+
+
+/*Combination-Special-Section*/
+.discover-our-menu-combination-special {
+    padding: 0;
+}
+
+.container-combination-special {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+.container-combination-special h1 {
+    margin: 3rem;
+    margin-bottom: 3rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+    letter-spacing: 2px;
+}
+
+.discover-our-menu-combination-special h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    color: var(--secondary-font-color);
+}
+
+.discover-our-menu-combination-special h3 span {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.menu-special-roll ul span {
+    color: var(--body-font-color);
+    font-family: var(--third-font);
+    font-size: 15px;
+    opacity: 1;
+    font-weight: 1000;
+}
+
+.container-combination-special h4 {
+    color: var(--main-font-color-dark);
+    font-family: var(--third-font);
+    font-size: 25px;
+    opacity: 1;
+    font-weight: 1000;
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+
+.menu-combination-special ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.menu-combination-special ul li .panel-menu-combination {
+    color: #fff;
+    border-radius: 25px;
+    height: 350px;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    text-shadow: -0.3px 0.3px 0 #000,
+        0.5px 0.5px 0 #000,
+        0.3px -0.3px 0 #000,
+        -0.3px -0.3px 0 #000;
+}
+
+.menu-combination-special ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: 1.7px;
+    opacity: 1;
+    margin: 1rem;
+}
+
+.menu-combination-special ul li h5 p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    opacity: 1;
+    font-weight: 1000;
+}
+
+.menu-combination-special li,
+.menu-combination-special h5,
+.menu-combination-special p {
+    margin: 0.3rem;
+}
+
+
+/*Kitchen-Combo*/
+
+.container-kitchen-combo {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+.container-kitchen-combo h4 {
+    color: var(--main-font-color-dark);
+    font-family: var(--third-font);
+    font-size: 25px;
+    opacity: 1;
+    font-weight: 1000;
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+
+.container-kitchen-combo h1 {
+    margin: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+}
+
+.menu-kitchen-combo ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.container-kitchen-combo h3 {
+    margin: 1.5rem;
+    margin-bottom: 3rem;
+    font-family: var(--main-font);
+    color: var(--secondary-font-color);
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.container-kitchen-combo h3 span {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.menu-kitchen-combo ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    opacity: 1;
+}
+
+.menu-kitchen-combo ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    letter-spacing: 2px;
+    opacity: 1;
+    font-weight: 1000;
+}
+
+.menu-kitchen-combo li,
+.menu-kitchen-combo h5,
+.menu-kitchen-combo p {
+    margin: 0.3rem;
+}
+
+
+/*Kids-Combo*/
+.container-kids-combo {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+.container-kids-combo h4 {
+    color: var(--main-font-color-dark);
+    font-family: var(--third-font);
+    font-size: 25px;
+    opacity: 1;
+    font-weight: 1000;
+    margin-top: 2rem;
+    margin-bottom: 1.25rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.container-kids-combo .kids-no-underline {
+    text-decoration: none;
+}
+
+
+.menu-kids-combo ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.container-kids-combo h3 {
+    margin: 1.5rem;
+    margin-bottom: 3rem;
+    font-family: var(--main-font);
+    color: var(--secondary-font-color);
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.container-kids-combo h3 span {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.menu-kids-combo ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: 1.7px;
+    opacity: 1;
+}
+
+
+.menu-kids-combo ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    letter-spacing: 2px;
+    opacity: 1;
+    font-weight: 1000;
+    margin-bottom: 3rem;
+}
+
+.menu-kids-combo li,
+.menu-kids-combo p {
+    margin: 1.5px;
+}
+
+.menu-kids-combo h5 {
+    margin: 0.85rem;
+
+}
+
+.discover-our-story-kids-combo {
+    margin-top: -12.5%;
+}
+
+
+/*Table-------------------*/
+table {
+    border: 3px solid #000;
+    border-spacing: 0;
+}
+
+table .hello-123 {
+    border-left: 1px solid #000;
+    border-right: 3px solid #000;
+    border-collapse: collapse;
+}
+
+table .hello-12 {
+    border-right: 1px solid #000;
+}
+
+table .hello-12-1 {
+    border-right: 3px solid #000;
+}
+
+
+
+table tr td {
+    padding: 10px;
+}
+
+table span {
+    font-family: var(--main-font);
+    color: var(--secondary-font-color);
+    font-size: 1.3rem;
+    font-weight: 1000;
+    letter-spacing: 1.7px;
+}
+
+table .pieces {
+    color: #000;
+}
+
+
+
+/*Table-End-----------------*/
+
+
+/*Bowls*/
+
+.container-bowls {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+.container-bowls h1 {
+    margin: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+}
+
+.container-bowls h3 {
+    margin: 1.5rem;
+    margin-bottom: 3rem;
+    font-family: var(--main-font);
+    color: var(--secondary-font-color);
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.container-bowls h3 span {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+
+.menu-bowls ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.menu-bowls ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--body-font);
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: 1.7px;
+    opacity: 1;
+    margin: 1rem;
+}
+
+.menu-bowls ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 1000;
+    opacity: 1;
+}
+
+.menu-bowls li,
+.menu-bowls h5,
+.menu-bowls p {
+    margin: 1.5px;
+}
+
+.bowls-list {
+    display: flex;
+    align-items: space-between;
+}
+
+.bowls-list-1,
+.bowls-list-2 {
+    margin-top: -30px;
+}
+
+.panel-bowl-sushi-bar {
+        color: #fff;
+        border-radius: 25px;
+        height: 350px;
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        position: relative;
+        text-shadow: -0.3px 0.3px 0 #000,
+        0.5px 0.5px 0 #000,
+        0.3px -0.3px 0 #000,
+        -0.3px -0.3px 0 #000;
+}
+
+
+/*Bowls-Kitchen*/
+
+.container-bowls-kitchen {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+.container-bowls-kitchen h1 {
+    margin: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--main-font);
+    font-weight: 1000;
+}
+
+.container-bowls-kitchen h3 {
+    margin: 3rem;
+    margin-bottom: 5rem;
+    font-family: var(--main-font);
+    color: var(--secondary-font-color);
+    font-weight: 1000;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+}
+
+.container-bowls-kitchen h3 span {
+    font-size: 1.75rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+
+.menu-bowls-kitchen ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.menu-bowls-kitchen ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--body-font);
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: 1.7px;
+    opacity: 1;
+    margin: 1.5rem;
+}
+
+.menu-bowls-kitchen ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 1000;
+    opacity: 1;
+    margin: 1.5rem;
+}
+
+.menu-bowls-kitchen li,
+.menu-bowls-kitchen h5,
+.menu-bowls-kitchen p {
+    margin: 1.5rem;
+}
+
+/*.bowls-list-kitchen {
+    display: flex;
+    justify-content: space-around;
+}*/
+
+.bowls-list-1-kitchen,
+.bowls-list-2-kitchen {
+    margin-top: 0;
+}
+
+
+/*side*/
+.container-side {
+    width: 100%;
+    max-width: 122.5rem;
+    /*height: 100vh;*/
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+/*.side-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}*/
+
+.menu-side ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.menu-side ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--body-font);
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    opacity: 1;
+}
+
+.menu-side ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    letter-spacing: 2px;
+    opacity: 1;
+    font-weight: 1000;
+}
+
+.menu-side li,
+.menu-side h5,
+.menu-side p {
+    margin: 0.7rem;
+}
+
+.discover-our-story-side {
+    margin-top: -12.5%;
+}
+
+.side-notice {
+    opacity: 5;
+    padding-top: 1%;
+}
+
+/*Lunch Special*/
+
+.discover-our-lunch-special {
+    padding: 0;
+}
+
+.container-lunch-special {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+}
+
+
+.menu-lunch-special ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.menu-lunch-special ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--body-font);
+    font-size: 12px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    opacity: 1;
+}
+
+.menu-lunch-special ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 13px;
+    letter-spacing: 2px;
+    opacity: 1;
+}
+
+.menu-lunch-special li,
+.menu-lunch-special h5,
+.menu-lunch-special p {
+    margin: 2px;
+
+}
+
+.lunch-special-list-1 li,
+.lunch-special-list-1 h5,
+.lunch-special-list-1 p {
+    padding-bottom: 7px;
+}
+
+.lunch-special-list {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: center;
+    flex-wrap: wrap;
+
+}
+
+
+.lunch-notice {
+    opacity: 5;
+    padding-top: 1%;
+}
+
+/*Sushi Imari Menu End----------*/
+
+
+
+/*Drink Menu Start-------------*/
+
+/*Soft-Drink-Dessert-ID*/
+#soft-drink-dessert {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+/*Bowls & Udon ID flex*/
+#bowls-udon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+/*Menu Group - 1 ID flex*/
+#menu-group-1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+/*sake-cold Section*/
+
+.container-sake-cold {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+
+}
+
+.menu-sake-cold ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.menu-sake-cold ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu-sake-cold ul .sake-dine-in-only {
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 1rem 5rem;
+}
+
+.menu-sake-cold ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 13px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    opacity: 1;
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+
+.menu-sake-cold ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    opacity: 1;
+    font-weight: 1000;
+    margin: 0.5rem;
+}
+
+.menu-sake-cold li,
+.menu-sake-cold h5 {
+    margin: 1.5px;
+}
+
+
+
+.menu-sake-cold h6 {
+    margin-bottom: 8px;
+    margin-top: 3px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--body-font);
+    opacity: 0.75;
+}
+
+
+
+.menu-sake-cold p {
+    margin: 8px;
+}
+
+
+/*Beer Section*/
+.draft-beer {
+    font-family: var(--main-font);
+    font-weight: 850;
+    font-size: 24px;
+    letter-spacing: 6px;
+    color: var(--main-font-color-dark);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    opacity: 9;
+}
+
+.craft-beer {
+    font-family: var(--main-font);
+    font-weight: 850;
+    font-size: 24px;
+    letter-spacing: 6px;
+    color: var(--main-font-color-dark);
+    margin-bottom: 3rem;
+    margin-top: 10rem;
+    text-transform: uppercase;
+    opacity: 9;
+}
+
+.draft-price {
+    margin-bottom: 3rem;
+}
+
+.draft-price h6 {
+    font-size: 10.5px;
+    opacity: .9;
+}
+
+
+.container-beer {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+
+}
+
+
+.menu-beer ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+
+.menu-beer ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 15px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    opacity: 1;
+}
+
+.menu-beer ul h4 {
+    color: var(--secondary-font-color);
+    font-family: var(--main-font);
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    opacity: 1;
+}
+
+
+.menu-beer ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 13px;
+    opacity: 0.55;
+}
+
+.menu-beer li,
+.menu-beer h5 {
+    margin: 3px;
+}
+
+
+
+.menu-beer h6 {
+    margin-bottom: 8px;
+    margin-top: 3px;
+}
+
+.menu-beer p {
+    margin: 8px;
+}
+
+
+/*Wine Section*/
+
+.white-wine,
+.red-wine {
+    font-family: var(--main-font);
+    font-weight: 850;
+    font-size: 24px;
+    letter-spacing: 6px;
+    color: var(--main-font-color-dark);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    opacity: 9;
+}
+
+.container-wine {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+
+}
+
+.menu-wine ul {
+    display: flex;
+    direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.menu-wine ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu-wine ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 15px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    opacity: 1;
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+
+.menu-wine ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    opacity: 1;
+    margin-top: 0;
+    margin: 0.5rem;
+    font-weight: 1000;
+}
+
+.menu-wine ul span {
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+.menu-wine li,
+.menu-wine h5 {
+    margin: 1.5px;
+}
+
+
+
+.menu-wine h6 {
+    margin-bottom: 0;
+    margin-top: 3px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--body-font);
+    opacity: 0.75;
+}
+
+.menu-wine p {
+    margin: 8px;
+}
+
+
+.glass-bottle-price {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*Soft Drink Section*/
+
+.container-soft-drink {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+
+}
+
+
+.menu-soft-drink ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.menu-soft-drink ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 15px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    opacity: 1;
+    margin: 1rem;
+    margin-top: 0.5rem;
+}
+
+.menu-soft-drink ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 15px;
+    opacity: 1;
+    margin: 0.5rem;
+    font-weight: 1000;
+}
+
+.menu-soft-drink li,
+.menu-soft-drink h5 {
+    margin: 3px;
+}
+
+
+
+.menu-soft-drink h6 {
+    margin-bottom: 8px;
+    margin-top: 3px;
+}
+
+.menu-soft-drink p {
+    margin: 8px;
+}
+
+.soft-drink-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.soda-list {
+    display: flex;
+    justify-content: center;
+    list-style: circle;
+    flex-wrap: wrap;
+}
+
+.soda-list li {
+    margin-left: 2.5rem;
+}
+
+/*Dessert Section*/
+
+.container-dessert {
+    width: 100%;
+    max-width: 122.5rem;
+    margin: 0 auto;
+    padding: 0 2.4rem;
+    position: relative;
+
+}
+
+
+.menu-dessert ul li {
+    color: #000;
+    font-family: var(--third-font);
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.menu-dessert ul h5 {
+    color: var(--main-font-color-dark);
+    font-family: var(--main-font);
+    font-size: 15px;
+    font-weight: 1000;
+    letter-spacing: 3px;
+    opacity: 1;
+    margin: 0;
+}
+
+.menu-dessert ul p {
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    font-size: 17px;
+    opacity: 1;
+    font-weight: 1000;
+
+}
+
+
+.menu-dessert li,
+.menu-dessert h5 {
+    margin: 0;
+    ;
+}
+
+.menu-dessert h6 {
+    margin: 0;
+}
+
+.menu-dessert p {
+    margin: 0;
+}
+
+
+.mochi-ice-cream-list {
+    display: flex;
+    justify-content: center;
+    list-style: circle;
+    flex-wrap: wrap;
+}
+
+.mochi-ice-cream-list li {
+    padding: 0;
+    margin-left: 2.5rem;
+    opacity: .65;
+    font-size: 11px;
+
+}
+
+
+
+
+/*Drink Menu End-------------*/
+
+
+
+/*Hour & Location------------*/
+
+.hour-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+
+}
+
+.holiday-hours {
+    padding-top: 7rem;
+    color: var(--body-font-color);
+    font-family: var(--main-font);
+    text-align: center;
+    list-style: circle;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.last-call-hours {
+    margin-top: 2px;
+    color: var(--secondary-font-color);
+    text-align: center;
+    list-style: none;
+    font-family: var(--main-font);
+    font-weight: 1000;
+    font-size: 1.8rem;
+}
+
+.holidays {
+    text-decoration: underline;
+    color: var(--secondary-font-color);
+}
+
+.holidays-1 a {
+    text-decoration: none;
+    color: #6e080b;
+}
+
+.holidays-1 a:hover {
+    color: var(--secondary-font-color);
+    transition: ease-in-out 0.7s;
+    opacity: 0.85;
+}
+
+
+
+
+
+
+/*Contact Form*/
+.contact-btn h1 {
+    font-size: 3rem;
+    color: var(--body-font-color);
+    font-family: var(--secondary-font);
+    margin: 10px;
+    padding: 5px;
+    letter-spacing: 4px;
+    border-bottom: 2px solid var(--main-font-color-dark);
+}
+
+.contact-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    background-color: #f4f7ff;
+    margin: 20px 0px;
+    box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/*.contact-btn a {
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: calibri;
+    width: 150px;
+    height: 40px;
+    margin: 10px;
+    background-color: #1e1e1e;
+    box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+.contact-btn a {
+    text-decoration: none;
+    color: var(--body-font-color);
+    font-weight: 700;
+}
+
+
+
+.contact-btn a:hover {
+    /*background-color: var(--secondary-font-color);*/
+    color: var(--secondary-font-color);
+    transition: all ease 0.7s;
+    font-weight: 700;
+}
+
+.contact-btn p {
+    font-size: 20px;
+    font-family: var(--main-font);
+    font-weight: 800;
+    margin: 1rem;
+}
+
+
+
+.circle {
+    list-style: circle;
+    font-size: 13px;
+    font-family: var(--secondary-font);
+    font-weight: 600;
+    margin: 1rem;
+}
+
+
+#contact-form {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#contact-form form {
+    display: flex;
+    width: 70%;
+    height: 60vh;
+    background-color: var(--main-font-color-dark);
+    box-shadow: 2px 12px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+
+}
+
+.contact-left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.contact-right {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid #D2D2D2;
+}
+
+.c-l-heading {
+    font-family: var(--secondary-font);
+    color: #d2d2d2;
+    font-size: 4.3rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    border-bottom: 2.5px solid #d2d2d2;
+    margin: 10%;
+}
+
+.f-email,
+.f-name,
+.f-mobile {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--secondary-font);
+    opacity: 0.8;
+}
+
+.f-email font,
+.f-name font,
+.f-mobile font {
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.f-email input,
+.f-name input,
+.f-mobile input {
+    height: 30px;
+    width: 250px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid var(--third-font-color);
+    color: #ffffff;
+    margin: 10px 0px;
+}
+
+.f-email input::placeholder,
+.f-name input::placeholder,
+.f-mobile input::placeholder {
+    opacity: 0.5;
+    letter-spacing: 1px;
+    font-size: 18px;
+    font-family: var(--main-font);
+    color: var(--third-font-color);
+}
+
+.f-email input:focus,
+.f-name input:focus,
+.f-mobile input:focus {
+    border-bottom: 1px solid #fff;
+    transition: all ease 0.5s;
+}
+
+.f-email font:focus,
+.f-name font:focus,
+.f-mobile font:focus {
+    border-bottom: 1px solid var(--secondary-font-color);
+    transition: all ease 0.5s;
+}
+
+.telephone {
+    letter-spacing: 0.5rem;
+}
+
+.message font {
+    font-size: 30px;
+    font-weight: 500;
+    color: #d2d2d2;
+    font-family: var(--secondary-font);
+    opacity: 1;
+    text-align: center;
+}
+
+.message {
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-right textarea {
+    width: 100%;
+    height: 320px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--third-font-color);
+    font-size: 14px;
+}
+
+.contact-right textarea::placeholder {
+    color: var(--secondary-font);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-family: var(--main-font);
+    opacity: 0.5;
+}
+
+.contact-right button {
+    width: 100%;
+    height: 50px;
+    background-color: #8d8d8d;
+    font-weight: 900;
+    outline: none;
+    border: none;
+    margin: 0px;
+    color: #000;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--third-font);
+    opacity: 0.85;
+}
+
+.contact-right button:hover,
+.contact-right button:focus {
+    opacity: 0.85;
+    background-color: var(--third-font-color);
+    color: #000;
+    transition: all ease 0.8s;
+    cursor: pointer;
+
+}
+
+.last-message {
+    font-family: var(--body-font);
+    color: #000;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
+    list-style: circle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5%;
+    padding: 3rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+}
+
+.last-message li {
+    margin: 1rem;
+}
+
+/*Contact-Ends*/
+
+
+
+
+/*media queries*/
+@media screen and (min-width: 900px) {
+
+    /*MODAL--------*/
+    .modal {
+        top: -50vh;
+        margin-bottom: -25vh;
+    }
+
+    section {
+        padding: 7.9rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+
+    .nav {
+        justify-content: space-between;
+    }
+
+    .nav-list {
+        position: initial;
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        padding: 0;
+        flex-direction: row;
+        transform: initial;
+        transition: initial;
+
+    }
+
+    .nav-item {
+        margin: 0 2.4rem;
+        bottom: none;
+    }
+
+    .nav-item:last-child {
+        margin-right: 0;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+        font-family: var(--main-font);
+        font-weight: 1000;
+    }
+
+
+    .active {
+        position: relative;
+    }
+
+    .active:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: var(--secondary-font-color);
+        left: 0;
+        bottom: -5px;
+    }
+
+    .sub-headline {
+        font-size: 10rem;
+    }
+
+
+    .first-letter {
+        font-size: 12.2rem;
+    }
+
+    .line {
+        max-width: 11.4rem;
+    }
+
+    .restaurant-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .restaurant-info>div {
+        flex: 1;
+    }
+
+    .padding-right {
+        padding-right: 7rem;
+    }
+
+    .footer-content {
+        max-width: 77.5rem;
+        margin: auto;
+    }
+
+    .footer-content-about {
+        max-width: 51.3rem;
+        margin: 0 auto 5.4rem;
+    }
+
+    .footer-content-divider {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-media,
+    .newsletter-form {
+        width: 100%;
+        max-width: 27.3rem;
+        margin: 0 1rem;
+    }
+
+    .social-icons i {
+        opacity: 1;
+    }
+
+    .newsletter-btn {
+        margin-left: 7.5rem;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 1171px) {
+
+    .sub-headline {
+        font-size: 9rem;
+    }
+
+    .first-letter {
+        font-size: 12rem;
+    }
+
+    .sub-headline-dining {
+        font-size: 9rem;
+    }
+
+    .first-letter-d,
+    .first-letter-t .first-letter-p {
+        font-size: 12rem;
+    }
+
+    .main-logo {
+        width: 95px;
+    }
+
+    .sub-headline-1 {
+        margin-bottom: 1rem;
+    }
+
+    .logo-imari-1 {
+        font-size: 2.75rem;
+    }
+
+
+    .c-l-heading {
+        font-size: 2.75rem;
+    }
+
+    .chef-hector-1 img {
+        width: 100%;
+        /*700px;*/
+    }
+
+    .special-roll-list {
+        flex-wrap: wrap;
+    }
+
+    .basic-happy-hour {
+
+        margin-left: 5%;
+    }
+
+    .basic-happy-hour-list-1,
+    .basic-happy-hour-list-1 {
+        margin-bottom: 7rem;
+    }
+
+    #basic-maki-combination {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media screen and (max-width: 1372px) {
+
+    #menu-group-1 {
+        flex-wrap: wrap;
+    }
+
+    .container-udon {
+        height: 65vh;
+    }
+
+    .container-kids-combo {
+        /* height: 45vh;*/
+        padding-bottom: -15%;
+    }
+
+    .discover-our-menu-3 {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media screen and (max-width: 1227px) {
+
+    #kitchen-dinner-combo {
+        margin-left: -5%;
+    }
+
+    .container-kitchen-combo {
+        margin-bottom: 5%;
+    }
+
+    .container-bowls {
+        margin-bottom: 5%;
+    }
+
+    .container-sushi-sashimi {
+        margin-top: -15%;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 1086px) {
+
+    .sub-headline {
+        font-size: 7rem;
+    }
+
+    .first-letter {
+        font-size: 10rem;
+    }
+
+    .sub-headline-dining {
+        font-size: 7rem;
+    }
+
+    .first-letter-d,
+    .first-letter-t .first-letter-p {
+        font-size: 10rem;
+    }
+
+    .main-logo {
+        width: 80px;
+    }
+
+    .body-btn-1 {
+        border: 2px solid #fff;
+    }
+
+    .body-btn-1:hover,
+    .body-btn-1:focus {
+        background: #fff;
+        transition: ease-in 0.4s;
+    }
+
+    .logo-imari-1 {
+        font-size: 2.5rem;
+    }
+
+    #contact-form form {
+        width: 90%;
+    }
+
+    .last-message {
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+
+    /*About*/
+    /* .restaurant-info img {
+        width: 100%;
+    }*/
+
+    .chef-hector-description {
+        padding-left: 0rem;
+        padding-right: 0rem;
+    }
+
+    .chef-hector-1 img {
+        width: 700px;
+
+    }
+
+    .chef-jose {
+        margin-left: 0;
+    }
+
+    .menu-isakaya ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+}
+
+@media screen and (max-width: 1281px) and (min-width: 1172px) {
+    .discover-our-menu-maki h2 {
+        font-size: 8.5rem;
+
+    }
+
+    .discover-our-menu-maki h2 span {
+        font-size: 9rem;
+    }
+}
+
+@media screen and (max-width: 1272px) and (min-width: 900px) {
+
+    #contact-form form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1086px) and (min-width: 900px) {
+
+    .f-name,
+    .f-email,
+    .f-mobile {
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+
+    #contact-form form {
+        width: 120vw;
+    }
+
+    .c-l-heading {
+        font-size: 2.3rem;
+    }
+
+    .f-email input,
+    .f-name input,
+    .f-mobile input {
+        width: 100%;
+        border: none;
+        background-color: #262626;
+        padding: 10px;
+        height: 40px;
+    }
+}
+
+@media screen and (width: 1024px) {
+    .last-message {
+        margin-top: -15rem;
+        margin-bottom: -5rem;
+    }
+
+    .basic-maki-list {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+
+@media screen and (min-width: 900px) and (max-width: 927px) {
+    .logo .logo-imari {
+        font-size: 1.75rem;
+    }
+
+    .logo .side-logo {
+        width: 2.35rem;
+        padding-right: 0.6rem;
+    }
+}
+
+
+
+@media screen and (max-width: 899px) {
+
+    .sub-headline {
+        font-size: 4rem;
+    }
+
+    .first-letter {
+        font-size: 5rem;
+    }
+
+    .first-letter-d,
+    .first-letter-e,
+    .first-letter-and {
+        font-size: 8.5rem;
+    }
+
+    .sub-headline-dining {
+        font-size: 7rem;
+    }
+
+    .dining,
+    .tasteful {
+        margin-top: 3rem;
+    }
+
+    .main-logo {
+        width: 50px;
+    }
+
+    .body-btn-1 {
+        border: 1.5px solid #fff;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .nav-item a {
+        color: var(--third-font-color);
+    }
+
+    .contact-item {
+        padding-left: 0;
+    }
+
+    .logo-imari-1 {
+        font-size: 1.75rem;
+    }
+
+    .sub-headline-1 {
+        margin-bottom: 0.5rem;
+    }
+
+    .message font {
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    .circle {
+        text-align: center;
+    }
+
+    .contact-btn h1 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    #contact-form {
+        padding: 20px;
+        height: auto;
+
+    }
+
+    #contact-form form {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        width: 90%;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%;
+        border: none;
+
+    }
+
+    .f-email,
+    .f-name,
+    .f-mobile {
+        width: 100%;
+    }
+
+
+    .f-email input,
+    .f-name input,
+    .f-mobile input {
+        width: 100%;
+        border: none;
+        background-color: #262626;
+        padding: 10px;
+        height: 40px;
+    }
+
+    #textarea {
+        background-color: #262626;
+        margin: 10px 0px;
+        padding: 10px;
+        height: 200px;
+        width: 100%;
+
+    }
+
+    .message {
+        margin: 0px;
+    }
+
+    #contact-form form h1 {
+        margin: 5px 0px;
+    }
+
+
+    /*About*/
+
+    /*.restaurant-info img {
+        width: 40%;
+    }*/
+
+    .chef-hector {
+        margin-left: 0rem;
+    }
+
+    .chef-judy img {
+        width: 700px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .chef-hector-1 img {
+        width: 700px;
+        height: 300px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .chef-oscar img {
+        width: 700px;
+        padding: 0;
+        margin: auto;
+    }
+
+    .chef-chris img {
+        width: 700px;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    .chef-jose img {
+        width: 700px;
+        padding: 0;
+        margin: 0;
+    }
+
+
+    .simple-image {
+        margin-left: 0%;
+    }
+
+    .judy-info {
+        margin-top: 10rem;
+    }
+
+    .oscar-info {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .chris-info {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+
+    .jose-info {
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 10rem;
+    }
+
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 899px) {
+    .navigation-auto {
+        margin-top: 388px;
+    }
+
+    .navigation-auto-1 {
+        margin-top: 422.68px;
+    }
+
+    .navigation-auto {
+        display: none;
+    }
+
+    .discover-our-story-sushi-sashimi {
+        padding-top: 10rem;
+    }
+
+
+
+
+}
+
+
+@media screen and (max-width: 767px) {
+    .navigation-auto {
+        display: none;
+    }
+
+    .navigation-auto div {
+        display: none;
+    }
+
+    .navigation-manual {
+        display: none;
+    }
+
+    .discover-our-story-sushi-sashimi h3 {
+        font-size: 1.3rem;
+    }
+
+    .discover-our-story-sushi-sashimi h3 span {
+        display: none;
+    }
+
+    .container-bowls h3,
+    .discover-our-menu-combination-special h3,
+    .discover-our-story-special-rolls h4,
+    .discover-our-story-special-rolls h4 span,
+    .container-bowls-kitchen h3,
+    .container-kids-combo h3,
+    .container-kitchen-combo h3 {
+        font-size: 1.3rem;
+    }
+
+    .container-bowls h3 span,
+    .discover-our-menu-combination-special h3 span,
+    .container-bowls-kitchen h3 span,
+    .container-kids-combo h3 span,
+    .container-kitchen-combo h3 span {
+        font-size: 1.5rem;
+    }
+
+    .basic-maki-list {
+        flex-wrap: wrap;
+    }
+
+    /*.bowls-list-kitchen {
+        flex-wrap: wrap;
+    }*/
+
+    .menu-sake-cold ul {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media screen and (max-width: 580px) {
+    .contact-btn h1 {
+        font-size: 1.2rem;
+        margin: 0px 10%;
+    }
+
+    .name {
+        width: 60%;
+    }
+
+    .c-l-heading {
+        font-size: 3.5rem;
+
+    }
+
+    .f-name {
+        margin-top: 1.5rem;
+    }
+
+    .contact-btn p {
+        font-size: 15px;
+    }
+
+    .holiday-hours {
+        font-size: 1.5rem;
+    }
+
+    .last-call-hours {
+        font-size: 1.4rem;
+    }
+
+    .last-message {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1.5rem;
+    }
+
+    .basic-happy-hour {
+        font-size: 3rem;
+
+    }
+
+    .discover-our-story-menu table .hello-123 {
+        font-size: 1.25rem;
+    }
+
+    .discover-our-story-menu table td {
+        font-size: 1.25rem;
+    }
+
+    .discover-our-story-menu table span {
+        font-size: 1rem;
+    }
+
+    table tr td {
+        padding: 5px;
+        margin: 0;
+    }
+
+    .menu-wine ul {
+        flex-wrap: wrap;
+    }
+
+    .soft-drink-list {
+        flex-wrap: wrap;
+    }
+
+
+
+}
+
+@media screen and (max-width: 530px) {
+    .red-wine {
+        margin-top: 5rem;
+    }
+}
+
+
+
+@media screen and (max-width: 451px) {
+
+    .modal-header .title {
+        font-size: 2.1rem;
+
+    }
+
+    .modal-header .close-button {
+
+        font-size: 2.9rem;
+
+    }
+
+    .modal-body h2 {
+        margin-bottom: 2.1rem;
+        font-size: 1.7rem;
+
+
+    }
+
+    .modal-body h3 {
+        padding-bottom: 10px;
+        font-size: 1.5rem;
+    }
+
+    .modal-body h4 {
+        padding-bottom: 3px;
+        font-size: 1.3rem;
+        font-weight: 900;
+
+    }
+
+    .main-logo {
+        display: none;
+    }
+
+
+    .social-icons-1 i {
+        font-size: 3rem;
+        padding: 1.5rem 2rem;
+    }
+
+    .sub-headline {
+        font-size: 3.5rem;
+    }
+
+    .sub-headline .first-letter {
+        font-size: 4rem;
+    }
+
+    .headline {
+        font-size: 2rem;
+    }
+
+    .headline-description h5 {
+        font-size: 0.75rem;
+    }
+
+    .body-btn-1 {
+        font-size: 1rem;
+        border: 0.5px solid #fff;
+        padding: 1.5rem;
+    }
+
+    .body-btn-2 {
+        font-size: 0.85rem;
+        padding: 1.5rem;
+    }
+
+    .sub-headline-dining {
+        font-size: 5rem;
+    }
+
+    .sub-headline-dining .first-letter-d,
+    .sub-headline-dining .first-letter-e,
+    .sub-headline-dining .first-letter-and {
+        font-size: 6.5rem;
+    }
+
+    .discover-our-story-sushi-sashimi h1 {
+        font-size: 1.25rem;
+    }
+
+
+}
+
+
+@media screen and (max-width: 351px) {
+    .combination-special {
+        padding: 10%;
+    }
+
+    .lunch-special {
+        padding: 10%;
+        font-size: 2.5rem;
+    }
+
+    .first-letter-l {
+        font-size: 3rem;
+    }
+
+    .happy-hour-dine-in {
+        margin-left: 0;
+    }
+
+    .discover-our-story-sushi-sashimi h2 {
+        font-size: 3rem;
+        padding-bottom: 0rem;
+    }
+
+    .discover-our-story-sushi-sashimi h2 .first-letter {
+        font-size: 3.25rem;
+    }
+
+    .discover-our-story-menu table .hello-123 {
+        font-size: 1rem;
+    }
+
+    .discover-our-story-menu table td {
+        font-size: 0.75rem;
+    }
+
+    .discover-our-story-menu table span {
+        font-size: 0.7rem;
+    }
+
+}
+
+
+@media screen and (max-width: 300px) {
+    .body-btn-1 {
+        font-size: 0.85rem;
+        padding: 2rem;
+    }
+
+    .body-btn-2 {
+        padding: 1.5rem 1rem;
+    }
+
+    .contact-btn p {
+        font-size: 12px;
+    }
+
+    .holiday-hours,
+    .last-call-hours {
+        font-size: 1.3rem;
+    }
+
+}
+
+@media screen and (max-width: 280px) {
+    .sub-headline-sushi-sashimi {
+        font-size: 3rem;
+    }
+
+    .first-letter-sushi-sashimi-1,
+    .first-letter-sushi-sashimi-2 {
+        font-size: 4rem;
+    }
+
+    .discover-our-story-sushi-sashimi h2 {
+        font-size: 2.75rem;
+
+    }
+
+    .discover-our-story-sushi-sashimi h2 .first-letter {
+        font-size: 3rem;
+    }
+
+    .sub-headline-drink-menu {
+        font-size: 3rem;
+    }
+
+    .first-letter-drink-menu {
+        font-size: 4rem;
+    }
+
+}
+
+/*Media Screen Height-----------*/
+@media screen and (max-height: 655px) {
+    .container-udon {
+        margin-bottom: 10%;
+    }
+}
+
+@media screen and (min-height: 1440px) {
+
+
+    #isakaya-sushi-sashimi {
+        flex-direction: column;
+    }
+
+
+}
+
+/*Media Screen Height End----------------*/
+
+
+
+
+
+/*Animations*/
+@keyframes fadeUp {
+    0% {
+        transform: translateY(4rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes scale {
+    0% {
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes grow {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes fadeDown {
+    0% {
+        transform: translateY(-1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+}
+
+@keyframes down {
+    0% {
+        opacity: 0;
+
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+}
